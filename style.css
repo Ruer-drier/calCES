@@ -1,125 +1,139 @@
 /* General button styles */
 button {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    border: none;
-    background-color: hsl(0, 0%, 30%);
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    cursor: pointer;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: none;
+  background-color: hsl(0, 0%, 30%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* Grid layout for keys */
+/* Grid layout */
 #keys {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 25px;
 }
 
-/* Calculator container styling */
+/* Calculator container */
 #calculator {
-    font-family: arial, sans-serif;
-    background-color: hsl(0, 0%, 55%);
-    border-radius: 15px;
-    max-width: 500px;
-    overflow: hidden;
-    box-shadow: 0 0 100px hsl(0, 0%, 20%);
-    width: 100%;
-    /* Ensuring responsiveness */
-    padding: 15px;
+  font-family: Arial, sans-serif;
+  background-color: hsl(0, 0%, 55%);
+  border-radius: 15px;
+  max-width: 500px;
+  padding: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 100px hsl(0, 0%, 20%);
+  width: 100%;
 }
 
-/* Display area */
 #display {
-    width: 100%;
-    padding: 20px;
-    font-size: 5rem;
-    border: none;
-    background-color: hsl(0, 0%, 20%);
-    color: white;
-    text-align: right;
+  width: 100%;
+  padding: 20px;
+  font-size: 5rem;
+  border: none;
+  background-color: hsl(0, 0%, 20%);
+  color: white;
+  text-align: right;
 }
 
-/* Body and page layout */
+#error {
+  color: red;
+  font-size: 1.2rem;
+  text-align: right;
+  width: 100%;
+}
+
+/* Page layout */
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: hsl(0, 0%, 80%);
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: auto;
+  background-color: hsl(0, 0%, 80%);
 }
 
-/* Operand button specific styles */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Operand button styles */
 .operand {
-    background-color: hsl(35, 100%, 55%);
+  background-color: hsl(35, 100%, 55%);
 }
-
 .operand:hover {
-    background-color: hsl(35, 100%, 65%);
+  background-color: hsl(35, 100%, 65%);
 }
-
 .operand:active {
-    background-color: hsl(35, 100%, 75%);
+  background-color: hsl(35, 100%, 75%);
 }
 
-/* Button hover and active states */
+/* Hover and active styles */
 button:hover {
-    background-color: hsl(0, 0%, 40%);
+  background-color: hsl(0, 0%, 40%);
 }
-
 button:active {
-    background-color: hsl(0, 0%, 50%);
+  background-color: hsl(0, 0%, 50%);
 }
 
-/* Responsive adjustments for smaller screens */
+/* Theme toggle button */
+#themeToggle {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  background: none;
+  border: 2px solid hsl(0, 0%, 30%);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1e1e1e;
+}
+body.dark-mode #calculator {
+  background-color: #2e2e2e;
+  box-shadow: 0 0 100px #000;
+}
+body.dark-mode #display {
+  background-color: #000;
+  color: #0f0;
+}
+body.dark-mode button {
+  background-color: #444;
+  color: #0f0;
+}
+
+/* Responsive for tablets */
 @media (max-width: 768px) {
-    /* Reducing button size for small screens */
-    button {
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
-    }
-
-    /* Reduce the display font size for better fit */
-    #display {
-        font-size: 4rem;
-    }
-
-    /* Adjust grid layout for smaller screens */
-    #keys {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-    }
-
-    #calculator {
-        padding: 10px;
-        max-width: 90%;
-    }
+  button {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  #display {
+    font-size: 4rem;
+  }
 }
 
+/* Responsive for phones */
 @media (max-width: 480px) {
-    /* Further reduce button size for very small screens */
-    button {
-        width: 70px;
-        height: 70px;
-        font-size: 1.5rem;
-    }
-
-    /* Further reduce display font size */
-    #display {
-        font-size: 3rem;
-    }
-
-    #keys {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 5px;
-    }
-
-    #calculator {
-        max-width: 100%;
-    }
+  button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+  #display {
+    font-size: 2.5rem;
+    padding: 15px;
+  }
+  #keys {
+    gap: 6px;
+    padding: 10px;
+  }
 }
